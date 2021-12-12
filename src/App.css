@@ -1,10 +1,78 @@
-.card-wrap {
-    display: flex;
-    flex-wrap: wrap;
+@import 'bootstrap/dist/css/bootstrap.min.css';
+
+/* Default */
+body {
+    background: #efefef;
 }
+
+.container {
+    max-width: 1000px !important;
+}
+
+section {
+    padding: 40px 0;
+}
+
+section .innerWrap{
+    background: #fff;
+    padding: 40px;
+}
+
+/* Header */
+.header{
+    margin: 20px 0 0;
+}
+
+.header .innerWrap{
+    background: #fff;
+}
+
+.header .innerWrap .siteName{
+    text-align: center;
+    padding: 20px 0;
+}
+
+.header .innerWrap .nav{
+    padding: 5px 0;
+    border-top: 1px solid #ddd;
+}
+
+.header .innerWrap .nav .nav-item a{
+   color: black;
+}
+
+/* Footer */
+.footer .innerWrap {
+    padding: 20px 0;
+    background: #fff;
+}
+
+.footer .innerWrap p{
+    text-align: center;
+    margin-bottom: 0;
+}
+
+/* Home Page */
 .card {
-    margin: 10px;
+    margin-bottom: 15px;
 }
+
 .card-img-top {
     height: 200px;
 }
+
+.link {
+    color: #fff !important;
+    text-decoration: none;
+}
+
+/* Product Detail Page */
+.productDetail .imgWrap, 
+.productDetail .imgWrap img {
+    width: 100%;
+}
+
+.productDetail h5 {
+    margin-bottom: 20px;
+}
+

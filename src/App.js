@@ -1,23 +1,20 @@
 import './App.css';
-import Cards from './components/cards';
+import Home from './components/home';
+import ProductDetail from './components/productDetail';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Header from './components/header';
+import Footer from './components/footer';
 
 function App() {
   return (
-    <div className="App">
-<div className="container">
-    <div className="card-wrap">
-        <Cards title="title one" src="http://commondatastorage.googleapis.com/codeskulptor-assets/lathrop/nebula_blue.s2014.png" />
-        <Cards title="title 2" src="http://commondatastorage.googleapis.com/codeskulptor-assets/lathrop/double_ship.png"/>
-        <Cards title="title 3" src="http://commondatastorage.googleapis.com/codeskulptor-assets/space%20station.png"/>
-        <Cards title="title 4" src="http://commondatastorage.googleapis.com/codeskulptor-assets/lathrop/debris4_brown.png" />
-        <Cards title="title one" src="http://commondatastorage.googleapis.com/codeskulptor-assets/lathrop/nebula_blue.s2014.png" />
-        <Cards title="title 2" src="http://commondatastorage.googleapis.com/codeskulptor-assets/lathrop/double_ship.png"/>
-        <Cards title="title 3" src="http://commondatastorage.googleapis.com/codeskulptor-assets/space%20station.png"/>
-        <Cards title="title 4" src="http://commondatastorage.googleapis.com/codeskulptor-assets/lathrop/debris4_brown.png" />
-
-    </div>
-    </div>
-</div>
+    <Router>
+      <Header />
+      <Routes>
+        <Route path="/" element={<Home />}></Route>
+        <Route path="/productDetail" element={<ProductDetail />}></Route>
+      </Routes>
+      <Footer />
+    </Router>
   );
 }
 
