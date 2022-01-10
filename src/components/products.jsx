@@ -1,23 +1,30 @@
 import Card from "react-bootstrap/Card";
 import Col from "react-bootstrap/Col";
-import {Button} from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { useSelector } from "react-redux";
 
 function Products(props) {
-  return (
-    <Col md="4">
+  const products = useSelector((state) => state.allProducts.products);
+  const renderList = products.map((product) => {
+  const { id, title, price, image, description } = product;
+console.log(id, "iddddd"); 
+    return (<Col md="4" key={id}>
       <Card>
-        <Card.Img variant="top" src={props.src}/>
+        <Card.Img variant="top" src={image} alt={id} />
         <Card.Body>
-          <Card.Title>{props.title}</Card.Title>
-          <Card.Text>
-            Some quick example text to build on the card title and make up the bulk of
-            the card's content.
-          </Card.Text>
-          <Button variant="primary"><Link to="productDetail" className="link">Go somewhere</Link></Button>
+          <Card.Title>{title}</Card.Title>
+          <Card.Title>${price}</Card.Title>
+          <Card.Text>{description}</Card.Text>
+          <Button variant="primary">
+            <Link to={`/product/${id}`} className="link">Go somewhere</Link>
+          </Button>
         </Card.Body>
       </Card>
-    </Col>
+    </Col>);
+  });
+  return (
+    <>{renderList}</>
   );
 }
 

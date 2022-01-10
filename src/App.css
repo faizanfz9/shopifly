@@ -47,7 +47,7 @@ section .innerWrap{
     background: #fff;
 }
 
-.footer .innerWrap p{
+.footer .innerWrap p {
     text-align: center;
     margin-bottom: 0;
 }
@@ -55,10 +55,23 @@ section .innerWrap{
 /* Home Page */
 .card {
     margin-bottom: 15px;
+    height: 500px;
 }
-
+.card-title {
+    margin-bottom: 0;
+    width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    display: inline-block;
+    text-overflow: ellipsis;
+}
+p.card-text {
+    height: 120px;
+    overflow-y: auto;
+}
 .card-img-top {
     height: 200px;
+    object-fit: contain;
 }
 
 .link {
